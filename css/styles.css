@@ -241,7 +241,7 @@ img {
   background-color: var(--bgcolor-team);
 }
 .card-set .team-card {
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
 }
 .team-prof,
 .team-name {
@@ -259,6 +259,7 @@ img {
 }
 .team .social {
   margin-top: 16px;
+  margin-bottom: 30px;
 }
 .social {
   display: flex;
