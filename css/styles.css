@@ -73,6 +73,55 @@ img {
   line-height: 1.19;
   color: var(--text-link-act);
 }
+/* Modal window */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  transition: opacity var(--transition), visibility var(--transition);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1) rotate(0);
+  width: 528px;
+  height: 581px;
+  background-color: var(--text-title);
+  border-radius: 4px;
+  opacity: 1;
+  transition: transform var(--transition), opacity var(--transition);
+}
+.backdrop.is-hidden {
+visibility:hidden;
+opacity:0;
+pointer-events:none;
+}
+.backdrop.is-hidden .modal {
+  opacity: 0;
+  transform: rotate(45deg); scale(0.3) rotate(1turn);
+}
+.modal-btn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
 .header .logo {
   margin-right: 93px;
 }
@@ -279,8 +328,7 @@ img {
   background-color: var(--text-title);
   border-radius: 50%;
   fill: var(--icon-color);
-  transition: background-color var(--transition), fill var(--transition) ;
-
+  transition: background-color var(--transition), fill var(--transition);
 }
 
 .team-icon:hover,
@@ -325,7 +373,7 @@ img {
   border: 0;
   color: var(--text-color-main);
   background-color: var(--bgcolor-team);
-   transition: background-color var(--transition), color var(--transition),
+  transition: background-color var(--transition), color var(--transition),
     box-shadow var(--transition);
   border-radius: 4px;
 }
@@ -351,18 +399,18 @@ img {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .overlay-text {
-position: absolute;
-left: 0;
-top: 0;
-height: 100%;
-width: 100%;
-background-color: rgba(33, 150, 243, 0.9);;
-color: var(--text-title);
-padding: 63px 24px;
-line-height: 28px;
-overflow: auto;
-transform: translateY(100%);
-transition: transform 250ms linear;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+  color: var(--text-title);
+  padding: 63px 24px;
+  line-height: 28px;
+  overflow: auto;
+  transform: translateY(100%);
+  transition: transform 250ms linear;
 }
 .overlay {
   position: relative;
