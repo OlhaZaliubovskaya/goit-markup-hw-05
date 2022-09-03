@@ -14,7 +14,9 @@
   --text-title: #ffffff;
   --bgcolor-team: #f5f4fa;
   --icon-color: #afb1b8;
+  --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   /* gap */
+
   --cadr-gap: 30px;
   --card-item: 4;
 }
@@ -115,6 +117,7 @@ img {
 }
 .address-link[target='_blank'] {
   color: var(--text-title);
+  transition: color var(--transition);
 }
 .header {
   font-weight: 500;
@@ -144,6 +147,7 @@ img {
   align-items: center;
   padding-top: 32px;
   padding-bottom: 32px;
+  transition: color var(--transition);
 }
 .contact-item {
   display: flex;
@@ -201,6 +205,7 @@ img {
   border: none;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  transition: background-color var(--transition);
 }
 .card-set {
   display: flex;
@@ -240,9 +245,7 @@ img {
 .team {
   background-color: var(--bgcolor-team);
 }
-.card-set .team-card {
-  /* padding-bottom: 30px; */
-}
+
 .team-prof,
 .team-name {
   font-size: 16px;
@@ -276,7 +279,8 @@ img {
   background-color: var(--text-title);
   border-radius: 50%;
   fill: var(--icon-color);
-  /* outline: 1px solid red; */
+  transition: background-color var(--transition), fill var(--transition) ;
+
 }
 
 .team-icon:hover,
@@ -295,6 +299,7 @@ img {
   border: 1px solid currentColor;
   border-radius: 4px;
   color: var(--icon-color);
+  transition: color var(--transition);
 }
 .client-link:hover,
 .client-link:focus {
@@ -320,6 +325,8 @@ img {
   border: 0;
   color: var(--text-color-main);
   background-color: var(--bgcolor-team);
+   transition: background-color var(--transition), color var(--transition),
+    box-shadow var(--transition);
   border-radius: 4px;
 }
 .current {
@@ -336,12 +343,36 @@ img {
 }
 .portfolio-link {
   display: block;
+  transition: box-shadow var(--transition);
 }
 .portfolio-link:hover,
 .portfolio-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+.overlay-text {
+position: absolute;
+left: 0;
+top: 0;
+height: 100%;
+width: 100%;
+background-color: rgba(33, 150, 243, 0.9);;
+color: var(--text-title);
+padding: 63px 24px;
+line-height: 28px;
+overflow: auto;
+transform: translateY(100%);
+transition: transform 250ms linear;
+}
+.overlay {
+  position: relative;
+  overflow: hidden;
+}
+.portfolio-link:hover .overlay-text,
+.portfolio-link:focus .overlay-text {
+  transform: translateY(0%);
+}
+
 .hero-btn:hover,
 .hero-btn:focus {
   background-color: var(--bgcolor-btn);
