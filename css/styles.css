@@ -215,6 +215,7 @@ img {
 }
 .active {
   position: relative;
+  color: var(--text-link-act);
 }
 
 .active::after {
@@ -295,19 +296,21 @@ img {
   border-radius: 4px;
 }
 .about-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+  bottom: 0;
+  /* display: flex;
+  justify-content: center; */
+  text-align: center;
+  padding-top: 27px;
+  padding-bottom: 27px;
   background: rgba(47, 48, 58, 0.8);
-  height: 70px;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
-  letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--text-title);
   width: 100%;
-  transform: translateY(-100%);
+  /* transform: translateY(-100%); */
 }
 
 .about {
@@ -315,6 +318,9 @@ img {
 }
 .about-list {
   --card-item: 3;
+}
+.about-list .card-item {
+  position: relative;
 }
 .team-card {
   background-color: var(--text-title);
@@ -362,8 +368,6 @@ img {
   transition: background-color var(--transition), fill var(--transition);
 }
 
-.team-icon:hover,
-.team-icon:focus,
 .social-link:hover,
 .social-link:focus {
   background-color: var(--text-link-act);
@@ -431,16 +435,19 @@ img {
 }
 .overlay-text {
   position: absolute;
+  display: flex;
   left: 0;
   top: 0;
   height: 100%;
   width: 100%;
+  font-size: 18px;
+  line-height: 1.56;
   background-color: rgba(33, 150, 243, 0.9);
   color: var(--text-title);
   padding: 63px 24px;
   line-height: 28px;
   overflow: auto;
-  transform: translateY(100%);
+  transform: translateY(101%);
   transition: transform 250ms linear;
 }
 .overlay {
